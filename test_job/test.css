@@ -1,0 +1,12 @@
+section{
+    margin-bottom: 15em;
+}
+.changeColor{
+    color :rgb(226, 43, 226);
+    background-color: rgb(26, 23, 23);
+    font-size: xx-large;
+}
+
+.changeEditBox{
+    background-color: rgba(204, 237, 241, 0.466);
+}
