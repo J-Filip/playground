@@ -3,8 +3,8 @@
 <p> Side projects, tutorials, tests, tinkering...
  
 <ul> 
-     <li> Track ISS || Track International Space Station location || leaflet.js | https://j-filip.github.io/random_stuff/ </li>
-  
+     <li> Track ISS || Track International Space Station location || leaflet.js </li>
+     <li> <strong>MejloMlat</strong> || Mail composer called 'mejloMlat' rewritten from ahk to javascript + search&filter all the schools in Croatia || vanilla js 
  </ul> 
        
       
