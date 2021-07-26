@@ -1,0 +1,33 @@
+* {
+  margin: 0.5em;
+}
+
+section {
+  margin-bottom: 10em;
+}
+.changeColor {
+  color: rgb(226, 43, 226);
+  background-color: rgb(26, 23, 23);
+  font-size: xx-large;
+}
+
+.input-box {
+  background-color: rgba(233, 242, 243, 0.466);
+  font-size: 1.1em;
+}
+
+#mapid {
+  height: 450px;
+}
+
+.composed-mail {
+  background-color: rgb(47, 47, 47);
+  color: rgb(255, 255, 255);
+  font-size: x-large;
+  margin: 2em 1em;
+  padding: 2em;
+}
+
+.mail-composer_input {
+  display: flex;
+}
