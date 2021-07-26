@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta class="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+  <link rel="stylesheet" href="style.css">
+
+
+  <title>Track ISS </title>
+</head>
+
+<body>
+
+  <!-- ISS location    -->
+
+  <section class="fetch">
+    <div class="fetched-div-learning">
+      <h1>Where is ISS?</h1>
+      <h3>* track ISS location and see all the countries it goes through</h3>
+      <h4>add features:</h4>
+      <ul>
+        <li>get alert when going through your country </li>
+        <li>see distance traveled while inspecting this page</li>
+        <li>job: buiild chrome extension to get school location </li>
+        <li>STYLE IT UUUUUUP</li>
+      </ul>
+      <p>
+        Name: <span id='iss-name'></span><br>
+        ID: <span id='iss-id'></span><br><br>
+        <strong>LIVE:</strong> <span></span><br>
+        Longitude: <span id="iss-longitude"></span> <br>
+        Latitude: <span id="iss-latitude"></span>
+      </p>
+    </div>
+    <button class="start-iss">START</button>
+    <div id="mapid">
+
+    </div>
+  </section>
+
+
+
+  <!--  <script src="test.js"></script>  -->
+  <script src="app.js"></script>
+
+  <script type="text/javascript" src="https://stamen-maps.a.ssl.fastly.net/js/tile.stamen.js?v1.3.0"></script>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
+  <script>
+    // setview is latitude and longitude and zoom
+
+    // get current location and show in popup
+
+    const mymap = L.map('mapid').setView([45.8150, 15.9780], 12);
+    var marker = L.marker([45.8150, 15.9780], {
+
+    }).addTo(mymap);
+
+    // centar
+    var circle = L.circle([45.8150, 15.9780], {
+      color: 'yellow',
+      fillColor: '#m51',
+      fillOpacity: 0.6,
+      radius: 900
+    }).addTo(mymap);
+    circle.bindPopup("Zagreb Main Square.");
+
+    // kvart i jarun
+    var circle2 = L.circle([45.783922, 15.909992], {
+      color: 'red',
+      fillColor: '#m51',
+      fillOpacity: 0.6,
+      radius: 1300
+    }).addTo(mymap);
+    circle2.bindPopup("I am usually around here somewhere.").openPopup();
+
+
+
+    // url for tiles used in building a map 
+    L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/terrain/{z}/{x}/{y}.png', {
+      attribution: 'http://www.openstreetmap.org/copyright"',
+    }).addTo(mymap);
+  </script>
+</body>
+
+</html>
