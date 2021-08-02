@@ -1,8 +1,32 @@
                                     
-  // ! async / await                                  
-                                    
+// ! custom events 
+const hiButton1 = document.getElementById('say-hi1');
+const hiButton2 = document.getElementById('say-hi2');
 
-      
+const xEvent = new CustomEvent ('xEvent', {
+    detail: {
+        backgroundColor : 'red'
+    },
+
+});
+
+function changeColor (element){
+    const bgColor = 'blue'
+    element.style.backgroundColor = bgColor;
+    hiButton1.dispatchEvent(xEvent);
+}
+
+
+changeColor(hiButton2);
+
+
+hiButton1.addEventListener('xEvent', function(event) {
+    element
+  });
+
+
+
+
 // async function testFetch () {
 
 //     let response = await fetch('https://j-filip.github.io/my_resume/');
@@ -158,39 +182,39 @@
 
                                 // BASICS
 // js test
-var adminName = 'Filip'
-const helloVar = 'Hello'
+// var adminName = 'Filip'
+// const helloVar = 'Hello'
 
-// pozdravne poruke
-const helloGdin = 'Poštovani gospodine'
-const helloGdja = 'Poštovana gospođo'
-const helloDragi = 'Dragi'
-const helloDraga = 'Draga'
-const helloTicket = 'Pozdrav'
-const mainZahvala = 'zahvaljujemo na...'
+// // pozdravne poruke
+// const helloGdin = 'Poštovani gospodine'
+// const helloGdja = 'Poštovana gospođo'
+// const helloDragi = 'Dragi'
+// const helloDraga = 'Draga'
+// const helloTicket = 'Pozdrav'
+// const mainZahvala = 'zahvaljujemo na...'
 
 
-// inputs 
-const agentName = '' // input
-const adminPassword = '' // input
+// // inputs 
+// const agentName = '' // input
+// const adminPassword = '' // input
 
-const userIme = '' // input
-const userPrezime = '' // input
-const ustanova = '' // input
-const userAai = '' // input
+// const userIme = '' // input
+// const userPrezime = '' // input
+// const ustanova = '' // input
+// const userAai = '' // input
 
 
 // loops
 // for loop
-var agentsMorning = ['Filip', 'Ivo', 'Perica', 'Mirka', '', 'Đoni'];
-var agentsMorningString = ''
-for (e of agentsMorning) {
-    if (e === 'Mirka') {         // if class becomes popodne - break
-        break;
-    }
-    agentsMorningString += '\n';
-    agentsMorningString += '1st ' + e;
-};
+// var agentsMorning = ['Filip', 'Ivo', 'Perica', 'Mirka', '', 'Đoni'];
+// var agentsMorningString = ''
+// for (e of agentsMorning) {
+//     if (e === 'Mirka') {         // if class becomes popodne - break
+//         break;
+//     }
+//     agentsMorningString += '\n';
+//     agentsMorningString += '1st ' + e;
+// };
 //console.log(agentsMorningString);
 
 
