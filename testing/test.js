@@ -1,28 +1,54 @@
-                                    
-// ! custom events 
-const hiButton1 = document.getElementById('say-hi1');
-const hiButton2 = document.getElementById('say-hi2');
+      // The wake lock sentinel.
+let wakeLock = null;
 
-const xEvent = new CustomEvent ('xEvent', {
-    detail: {
-        backgroundColor : 'red'
-    },
-
-});
-
-function changeColor (element){
-    const bgColor = 'blue'
-    element.style.backgroundColor = bgColor;
-    hiButton1.dispatchEvent(xEvent);
-}
-
-
-changeColor(hiButton2);
+// Function that attempts to request a wake lock.
+const requestWakeLock = async () => {
+  try {
+    wakeLock = await navigator.wakeLock.request('screen');
+    wakeLock.addEventListener('release', () => {
+      console.log('Wake Lock was released');
+    });
+    console.log('Wake Lock is active');
+  } catch (err) {
+    console.error(`${err.name}, ${err.message}`);
+  }
+};
+requestWakeLock();                              
 
 
-hiButton1.addEventListener('xEvent', function(event) {
-    element
-  });
+
+
+
+
+
+
+
+
+
+// // ! custom events 
+// const hiButton1 = document.getElementById('say-hi1');
+// const hiButton2 = document.getElementById('say-hi2');
+
+// const xEvent = new CustomEvent ('xEvent', {
+//     detail: {
+//         backgroundColor : 'red'
+//     },
+
+// });
+
+// function changeColor (element){
+//     const bgColor = 'blue'
+//     element.style.backgroundColor = bgColor;
+//     hiButton1.dispatchEvent(xEvent);
+// }
+
+
+// changeColor(hiButton2);
+
+
+// hiButton1.addEventListener('xEvent', function(event) {
+//     element
+//   });
 
 
 
