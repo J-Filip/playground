@@ -13,15 +13,6 @@ let user = { loggedIn: false };
 </script>
 
 <main>
-	{#if user.loggedIn}
-	<button on:click={toggle}>
-		Log in
-	</button>
-	{:else}
-	<button on:click={toggle}>
-		Log out
-	</button>
-	{/if}
 	<Heading/> 
 	<Navbar/> 
 	
@@ -44,7 +35,7 @@ let user = { loggedIn: false };
 
 <style>
 	main {
-		text-align: center;
+		text-align: left;
 		padding: 1em;
 		max-width: 840px;
 		margin: 0 auto;
