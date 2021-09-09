@@ -1,0 +1,9 @@
+.canvas__main {
+  margin: auto;
+  padding: 1em;
+}
+
+.canvas__shift {
+  font-size: 14px;
+  font-family: system-ui;
+}

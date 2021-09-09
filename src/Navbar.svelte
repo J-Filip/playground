@@ -42,7 +42,7 @@
 <style>
   main {
     text-align: center;
-    padding: s1em;
+    padding: 1em;
     max-width: 840px;
     margin: 0 auto;
   }

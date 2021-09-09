@@ -1,0 +1,15 @@
+.select {
+  padding: 0.3rem;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+}
+
+.select__owned {
+  background-color: #8feb92 !important;
+}
+
+.select__not-owned {
+  background-color: #f089aecf !important;
+}
+option {
+  background: #fff;
+}

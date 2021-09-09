@@ -1,0 +1,75 @@
+{
+  "manifest_version": 3,
+  "name": "CN Helper",
+  "description": "Productivity tool for helpdesk agents",
+  "version": "0.0.7.1",
+  "icons": {
+    "16": "imgs/icon16.png",
+    "48": "imgs/icon48.png",
+    "128": "imgs/icon128.png"
+  },
+  "action": {
+    "default_popup": "pop-up/index.html"
+  },
+  "permissions": ["activeTab", "tabs", "scripting", "contextMenus"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://suitecrm.carnet.hr/index.php?module=Home&action=index"
+      ],
+      "js": ["crm/lock_page.js"],
+      "css": ["crm/style.css"]
+    },
+    {
+      "matches": ["https://suitecrm.carnet.hr/*"],
+      "js": ["crm/app.js"],
+      "css": ["crm/style.css"]
+    },
+    {
+      "matches": [
+        "https://suitecrm.carnet.hr/index.php?action=DetailView&module=Cases*",
+        "https://suitecrm.carnet.hr/index.php?module=Cases*",
+        "https://suitecrm.carnet.hr/index.php?action*"
+      ],
+      "js": ["crm/tags.js", "crm/case-data.js"],
+      "css": ["crm/style.css"]
+    },
+    {
+      "matches": [
+        "https://suitecrm.carnet.hr/index.php?module=Emails&action=ReplyTo*"
+      ],
+      "js": ["crm/send-mail.js"]
+    },
+    {
+      "matches": ["https://suitecrm.carnet.hr/index.php"],
+      "js": ["crm/edit_case.js"],
+      "css": ["crm/style.css"]
+    },
+    {
+      "matches": ["https://intapps.carnet.hr/hdraspored/public/schedule/index"],
+      "js": ["intapps/app.js"],
+      "css": ["intapps/style.css"]
+    },
+    {
+      "matches": ["https://oprema.carnet.hr/*"],
+      "js": ["oprema_carnet/style.js"]
+    },
+    {
+      "matches": ["https://oprema.carnet.hr/uredjaji"],
+      "js": ["oprema_carnet/devices.js"],
+      "css": ["oprema_carnet/style.css"]
+    },
+    {
+      "matches": ["https://oprema.carnet.hr/djelatnici"],
+      "js": ["oprema_carnet/employees.js"],
+      "css": ["oprema_carnet/style.css"]
+    },
+    {
+      "matches": ["https://otp-login.carnet.hr/index"],
+      "js": ["otp/tokenator.js"]
+    }
+  ]
+}
