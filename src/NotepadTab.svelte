@@ -5,7 +5,7 @@
     </script>
     
     <main>
-        <h1>Notepad tab</h1>
+        <h1>Tokenator</h1>
      <Notepad/>
     </main>
     
