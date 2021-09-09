@@ -1,10 +1,20 @@
 <script>
 
 
-  let tokenOwner = `Čovjekčić`;
-  let tokenSerialNumber = 'CN12345';
+  let tokenSerialNumber = document.querySelector("#content > div > div.w-half.left > div:nth-child(1)").nextElementSibling.innerText;
+
+  let tokenOwnerFullName = document.querySelector("#content > div > div.w-half.left > div:nth-child(3)").nextElementSibling.innerText.split(' ') ;
+   let tokenOwner = tokenOwnerFullName[tokenOwnerFullName.length-1];
+
   let userIdentificator = tokenSerialNumber.slice(2);
-  let activationCode = '010101';
+
+  let indexActivation = document.querySelector("#log > tbody > tr:nth-child(2) > td:nth-child(3)").innerText.search('activation_number');
+let indexPhone = document.querySelector("#log > tbody > tr:nth-child(2) > td:nth-child(3)").innerText.search('phone');
+let log = document.querySelector("#log > tbody > tr:nth-child(2) > td:nth-child(3)").innerText;
+
+let activationCode = log.slice( indexActivation+22, (indexActivation+27) );
+
+  //let activationCode = '010101';
   let mailSender = '';
 
   let users = [
@@ -38,7 +48,7 @@ mToken je uspješno`,
   let operatingSystems = [
     {
       id: 1,
-      msg: `Budući da se radi o sustavu Android, za aktivaciju je potrebno koristiti aktivacijski kod (${activationCode})`,
+      msg: `Budući da se radi o sustavu Android, za aktivaciju je potrebno koristiti aktivacijski kod (${activationCode}).`,
       os: 'Android',
     },
     {
@@ -76,7 +86,7 @@ Korisnički identifikator: ${userIdentificator}`,
   ];
   let selectedAction = actions[0];
 
-  $: helloUser = `${selectedUser.msg} ${mailSender} ${forUser.msg} `;
+  $: helloUser = `${selectedUser.msg} ${mailSender}${forUser.msg}`;
   $: osAction = `${selectedAction.status} ${selectedOS.msg}`;
 
   // main msg
@@ -111,7 +121,7 @@ function getOption(){
 
 </script>
 
-<main>
+
   <div class="tile is-ancestor">
     <div class="tile is-4 is-vertical is-parent">
       <div class="tile is-child ">
@@ -372,7 +382,7 @@ function getOption(){
       </div>
     </div>
   </div>
-</main>
+
 
 <style>
   main {

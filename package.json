@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "rollup -c",
+    "build": "cpx -C public/** public/** && rollup -c && cpx extension/**/*.* public",
     "dev": "rollup -c -w",
     "start": "sirv public --no-clear",
     "deploy": "node ./gh-pages.js"
@@ -20,6 +20,7 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
+    "cpx": "^1.5.0",
     "sirv-cli": "^1.0.0"
   }
 }

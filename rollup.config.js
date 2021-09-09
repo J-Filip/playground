@@ -84,7 +84,7 @@ export default [
     output: {
       sourcemap: true,
       format: 'iife',
-      file: 'public/build/injection.js',
+      file: 'public/otp/bundles.js',
     },
     plugins: [ svelte({
         compilerOptions: {

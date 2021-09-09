@@ -1,0 +1,43 @@
+* {
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  background-color: rgb(240, 240, 240);
+}
+
+.header {
+  border-bottom: 2px solid red;
+}
+
+.school-search {
+  margin: 0.2em;
+  padding: 0.3em;
+  border: none;
+}
+
+#school-search_input {
+  padding: 0.5em;
+  margin: 1em;
+  background-color: rgb(247, 247, 247);
+  color: rgb(47, 47, 47);
+}
+
+::placeholder {
+  color: rgba(24, 24, 24, 0.836);
+}
+
+#school-search_list {
+  margin: 1em;
+  border: none;
+}
+
+div {
+  margin: 1em;
+  padding: 0.7em;
+  border-bottom: 1px solid black;
+}
+
+.links {
+  border-top: 1px solid black;
+}
