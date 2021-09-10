@@ -322,7 +322,7 @@
     	return child_ctx;
     }
 
-    // (179:10) {#if forUser.text !== 'za sebe'}
+    // (180:10) {#if forUser.text !== 'za sebe'}
     function create_if_block(ctx) {
     	let div1;
     	let label;
@@ -373,7 +373,7 @@
     	};
     }
 
-    // (212:16) {#each users as user}
+    // (213:16) {#each users as user}
     function create_each_block_3(ctx) {
     	let label;
     	let input;
@@ -426,7 +426,7 @@
     	};
     }
 
-    // (235:20) {#each mainBodies as main}
+    // (236:20) {#each mainBodies as main}
     function create_each_block_2(ctx) {
     	let option;
     	let t0_value = /*main*/ ctx[33].text + "";
@@ -454,7 +454,7 @@
     	};
     }
 
-    // (257:20) {#each operatingSystems as system}
+    // (258:20) {#each operatingSystems as system}
     function create_each_block_1(ctx) {
     	let option;
     	let t0_value = /*system*/ ctx[30].os + "";
@@ -482,7 +482,7 @@
     	};
     }
 
-    // (271:14) {#each actions as action}
+    // (272:14) {#each actions as action}
     function create_each_block(ctx) {
     	let label;
     	let input;
@@ -1031,13 +1031,17 @@
 
     function copyTextArea() {
     	let textToCopy = document.querySelector('#mail');
+
+    	//console.log(textToCopy.value);
+    	let split = textToCopy.value.split('\n\n');
+
+    	//console.log(split);
+    	let back = split.join('\n');
+
+    	console.log(back);
+    	textToCopy.value = back;
     	textToCopy.select();
     	document.execCommand('copy');
-    	console.log(textToCopy.value);
-    	let split = textToCopy.value.split('\n\n');
-    	console.log(split);
-    	let back = split.join('\n');
-    	console.log(back);
     }
 
     function instance$1($$self, $$props, $$invalidate) {
@@ -1074,7 +1078,7 @@
     	let mainBodies = [
     		{
     			msg: `,
-      
+
 mToken djelatnice ${tokenOwner} je`,
     			text: 'za gospođu'
     		},
@@ -1086,7 +1090,7 @@ mToken djelatnika ${tokenOwner} je`,
     		},
     		{
     			msg: `,
-    
+
 mToken je uspješno`,
     			text: 'za sebe'
     		}
@@ -1129,9 +1133,9 @@ Korisnički identifikator: ${userIdentificator}`,
     		},
     		{
     			id: 2,
-    			status: 'reaktiviran',
+    			status: 'reaktiviran.',
     			name: 'Reaktivacija',
-    			msg: `Serijski broj mTokena ostaje isti, odnosno ${tokenSerialNumber}`
+    			msg: `Serijski broj mTokena ostaje isti, odnosno ${tokenSerialNumber}.`
     		}
     	];
 
@@ -1187,7 +1191,7 @@ Korisnički identifikator: ${userIdentificator}`,
 
     		if ($$self.$$.dirty[0] & /*helloUser, osAction, selectedAction*/ 98320) {
     			// main msg
-    			$$invalidate(5, mail = ` ${helloUser} ${osAction} 
+    			$$invalidate(5, mail = `${helloUser} ${osAction} 
 
 ${selectedAction.msg}
 

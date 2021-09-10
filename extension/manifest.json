@@ -68,7 +68,7 @@
       "css": ["oprema_carnet/style.css"]
     },
     {
-      "matches": ["https://otp-login.carnet.hr/token/", "https://otp-login.carnet.hr/token/add_cn_action"],
+      "matches": ["https://otp-login.carnet.hr/token/searchToken", "https://otp-login.carnet.hr/token/add_cn_action"],
       "js": ["otp/bundles.js"]
     }
   ]

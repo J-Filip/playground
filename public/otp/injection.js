@@ -8,8 +8,7 @@ agentStatusIconLink.rel = 'stylesheet';
 agentStatusIconLink.href = "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma-rtl.min.css";
 headTag.append(agentStatusIconLink);
 
-// const background = document.querySelector("#content > div");
-const background = document.querySelector("#content > div > div.t-center.mt100");
+const background = document.querySelector("#content > div");
 let placement = document.createElement("section");
 background.after(placement);
 

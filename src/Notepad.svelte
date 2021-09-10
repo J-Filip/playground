@@ -26,7 +26,7 @@ let activationCode = log.slice( indexActivation+22, (indexActivation+27) );
   let mainBodies = [
     {
       msg: `,
-      
+
 mToken djelatnice ${tokenOwner} je`,
       text: 'za gospođu',
     },
@@ -38,7 +38,7 @@ mToken djelatnika ${tokenOwner} je`,
     },
     {
       msg: `,
-    
+
 mToken je uspješno`,
       text: 'za sebe',
     },
@@ -79,9 +79,9 @@ Korisnički identifikator: ${userIdentificator}`,
     },
     {
       id: 2,
-      status: 'reaktiviran',
+      status: 'reaktiviran.',
       name: 'Reaktivacija',
-      msg: `Serijski broj mTokena ostaje isti, odnosno ${tokenSerialNumber}`,
+      msg: `Serijski broj mTokena ostaje isti, odnosno ${tokenSerialNumber}.`,
     },
   ];
   let selectedAction = actions[0];
@@ -90,7 +90,7 @@ Korisnički identifikator: ${userIdentificator}`,
   $: osAction = `${selectedAction.status} ${selectedOS.msg}`;
 
   // main msg
-  $: mail = ` ${helloUser} ${osAction} 
+  $: mail = `${helloUser} ${osAction} 
 
 ${selectedAction.msg}
 
@@ -98,13 +98,14 @@ Za sve ostale upite stojimo Vam na raspolaganju.`;
 
   function copyTextArea() {
     let textToCopy = document.querySelector('#mail');
-    textToCopy.select();
-    document.execCommand('copy');
-    console.log(textToCopy.value);
+    //console.log(textToCopy.value);
     let split = textToCopy.value.split('\n\n');
-    console.log(split);
+    //console.log(split);
     let back = split.join('\n');
     console.log(back);
+    textToCopy.value = back;
+    textToCopy.select();
+    document.execCommand('copy');
   }
 
 
