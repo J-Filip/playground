@@ -14,113 +14,163 @@ let log = document.querySelector("#log > tbody > tr:nth-child(2) > td:nth-child(
 
 let activationCode = log.slice( indexActivation+22, (indexActivation+27) );
 
-  //let activationCode = '010101';
+
   let mailSender = '';
 
-  let users = [
-    { id: 1, msg: `Poštovana gospođo`, name: 'Gđa.' },
-    { id: 2, msg: `Poštovani gospodine`, name: 'Gdin.' },
-  ];
-  let selectedUser = users[0];
+  let yesPhoneMissing = false;
+    let phoneMissing = '';
+    let yesTokenMissing = false;
+    let tokenMissing = '';
 
-  let mainBodies = [
-    {
-      msg: `,
+    let combMsg = ''
+
+  let users = [
+  { id: 1, msg: `Poštovana gospođo`, name: 'Gđa.' },
+  { id: 2, msg: `Poštovani gospodine`, name: 'Gdin.' },
+];
+let selectedUser = users[0];
+
+let mainBodies = [
+  {
+    msg: `,
 
 mToken djelatnice ${tokenOwner} je`,
-      text: 'za gospođu',
-    },
-    {
-      msg: `,
+    text: 'za gospođu',
+  },
+  {
+    msg: `,
 
 mToken djelatnika ${tokenOwner} je`,
-      text: 'za gospodina',
-    },
-    {
-      msg: `,
+    text: 'za gospodina',
+  },
+  {
+    msg: `,
 
 mToken je uspješno`,
-      text: 'za sebe',
-    },
-  ];
-  let forUser = mainBodies[0];
+    text: 'za sebe',
+  },
+];
+let forUser = mainBodies[0];
 
-  let operatingSystems = [
-    {
-      id: 1,
-      msg: `Budući da se radi o sustavu Android, za aktivaciju je potrebno koristiti aktivacijski kod (${activationCode}).`,
-      os: 'Android',
-    },
-    {
-      id: 2,
-      msg: `U slučaju da se radi o sustavu iOS, za aktivaciju se koriste inicijalna lozinka i korisnički identifikator.
+let operatingSystems = [
+  {
+    id: 1,
+    msg: `Budući da se radi o sustavu Android, za aktivaciju je potrebno koristiti aktivacijski kod (${activationCode}).`,
+    os: 'Android',
+  },
+  {
+    id: 2,
+    msg: `U slučaju da se radi o sustavu iOS, za aktivaciju se koriste inicijalna lozinka i korisnički identifikator.
 
 Inicijalna lozinka: ${activationCode}
-Korisnički identifikator: ${userIdentificator} `,
-      os: 'iOS',
-    },
-    {
-      id: 3,
-      msg: ` Ako se radi o sustavu Android, za aktivaciju je potrebno koristiti aktivacijski kod. U slučaju da se radi o sustavu iOS, za aktivaciju se koriste inicijalna lozinka i korisnički identifikator.
+Korisnički identifikator: ${userIdentificator}`,
+    os: 'iOS',
+  },
+  {
+    id: 3,
+    msg: ` Ako se radi o sustavu Android, za aktivaciju je potrebno koristiti aktivacijski kod. U slučaju da se radi o sustavu iOS, za aktivaciju se koriste inicijalna lozinka i korisnički identifikator.
 
 Aktivacijski kod/inicijalna lozinka: ${activationCode}
 Korisnički identifikator: ${userIdentificator}`,
-      os: 'Nepoznat',
-    },
-  ];
-  let selectedOS = operatingSystems[0];
+    os: 'Nepoznat',
+  },
+];
+let selectedOS = operatingSystems[0];
 
-  let actions = [
-    {
-      id: 1,
-      status: 'aktiviran.',
-      name: 'Aktivacija',
-      msg: `Ako ćete mToken koristiti za prijavu u e-Dnevnik, prije prve prijave potrebno je da e-Dnevnik administrator Vaše škole unese serijski broj mTokena ${tokenSerialNumber} u sustav.`,
-    },
-    {
-      id: 2,
-      status: 'reaktiviran.',
-      name: 'Reaktivacija',
-      msg: `Serijski broj mTokena ostaje isti, odnosno ${tokenSerialNumber}.`,
-    },
-  ];
-  let selectedAction = actions[0];
+let actions = [
+  {
+    id: 1,
+    status: 'aktiviran.',
+    name: 'Aktivacija',
+    msg: `Ako ćete mToken koristiti za prijavu u e-Dnevnik, prije prve prijave potrebno je da e-Dnevnik administrator Vaše škole unese serijski broj mTokena ${tokenSerialNumber} u sustav.`,
+  },
+  {
+    id: 2,
+    status: 'reaktiviran.',
+    name: 'Reaktivacija',
+    msg: `Serijski broj mTokena ostaje isti, odnosno ${tokenSerialNumber}.`,
+  },
+];
+let selectedAction = actions[0];
 
-  $: helloUser = `${selectedUser.msg} ${mailSender}${forUser.msg}`;
-  $: osAction = `${selectedAction.status} ${selectedOS.msg}`;
-
-  // main msg
-  $: mail = `${helloUser} ${osAction} 
+$: helloUser = `${selectedUser.msg} ${mailSender}${forUser.msg}`;
+$: osAction = `${selectedAction.status} ${selectedOS.msg}`;
+  
+// main msg
+$: mail = `${helloUser} ${osAction} 
 
 ${selectedAction.msg}
 
-Za sve ostale upite stojimo Vam na raspolaganju.`;
+${phoneMissing}
 
-  function copyTextArea() {
+${tokenMissing}
+
+${combMsg}
+
+Za sve ostale upite stojimo Vam na raspolaganju.`;
+  
+function copyTextArea() {
     let textToCopy = document.querySelector('#mail');
     //console.log(textToCopy.value);
-    let split = textToCopy.value.split('\n\n');
-    //console.log(split);
-    let back = split.join('\n');
-    console.log(back);
+    let mailParts = textToCopy.value.split('\n\n');
+    mailParts = mailParts.filter((part) => {
+      return part !== ''
+    })
+    console.log(mailParts);
+    let back = mailParts.join('\n');
     textToCopy.value = back;
     textToCopy.select();
     document.execCommand('copy');
   }
-
-
-function getOption(){
-
- let select = document.getElementById('za');
- let selectedValue = select.options[select.selectedIndex].innerText;
- if(selectedValue === 'za sebe '){
-      console.log(selectedValue);
-      mailSender = tokenOwner
+  
+  
+  function getOption(){
+  
+   let select = document.getElementById('za');
+   let selectedValue = select.options[select.selectedIndex].innerText;
+   if(selectedValue === 'za sebe '){
+        mailSender = tokenOwner
+      }
     }
-  }
+  
+    function addPhoneMissing(){
+      if(yesPhoneMissing === true && yesTokenMissing === true){
+        tokenMissing = '';
+        phoneMissing = '';
+        yesPhoneMissing = false;
+        yesTokenMissing= false;
+        combMsg = 'Također, molimo da nam u povratnoj poruci pošaljete broj mobitela na kojem će se aplikacija koristiti te serijski broj neispravnog fizičkog tokena.'
+        return;
+      }
+      if (yesPhoneMissing === true){
+        combMsg = '';
+        phoneMissing = 'Također, molimo da nam u povratnoj poruci pošaljete broj mobitela na kojem će se aplikacija koristiti.';
+        return
+      }
+      phoneMissing = '';
+      return
+    }
 
-
-</script>
+    function addTokenMissing(){
+      if(yesPhoneMissing === true && yesTokenMissing === true){
+        tokenMissing = '';
+        phoneMissing = '';
+        yesPhoneMissing = false;
+        yesTokenMissing= false;
+        combMsg = 'Također, molimo da nam u povratnoj poruci pošaljete broj mobitela na kojem će se aplikacija koristiti te serijski broj neispravnog fizičkog tokena.'
+        return;
+      }
+      if (yesTokenMissing === true){
+        combMsg = '';
+        
+        tokenMissing = 'Također, molimo da nam u povratnoj poruci pošaljete serijski broj neispravnog fizičkog tokena.';
+        return
+      }
+      tokenMissing = '';
+      return
+    }
+  
+  </script>
 
 
   <div class="tile is-ancestor">
@@ -193,9 +243,9 @@ function getOption(){
 
         </form>
       </div>
-      <div class="tile is-child has-text-centered ">
+      <div class="tile is-child ">
         <button on:click={copyTextArea} class="button is-primary"
-          >Kopiraj</button
+          >Formatiraj&Kopiraj</button
         >
       </div>
     </div>
@@ -284,24 +334,21 @@ function getOption(){
           </div>
         </div>
 
-
-
-        <!-- <div class="field is-horizontal">
-          <div class="field-label is-small">
-            <label class="label">Ostalo:</label>
+        <div class="field is-horizontal">
+          <div class="field ">
+            <label class="label">Nedostaje:</label>
           </div>
-          <div class="field-body">
-            <div class="field is-narrow">
-              <div class="select is-multiple is-small">
-                <select multiple size="3">
-                  <option value="Argentina">Nedostaje broj mobitela</option>
-                  <option value="Bolivia">Deaktivacija fizičkog tokena</option>
-                  <option value="Brazil"></option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div> -->
+        <div class="field ml-5">
+          <label class="checkbox">
+            <input bind:checked={yesPhoneMissing} on:change={addPhoneMissing} type="checkbox">
+            Broj mobitela
+          </label>
+          <label class="checkbox">
+            <input bind:checked={yesTokenMissing} on:change={addTokenMissing} type="checkbox">
+            Serijski broj fizičkog tokena
+          </label>
+        </div>
+        </div>
 
 
 
@@ -311,8 +358,8 @@ function getOption(){
             value={mail}
             class="textarea is-primary"
             placeholder="Write something ..."
-            cols="60"
-            rows="15"
+            cols="65"
+            rows="17"
           />
         </div>
       </div>
