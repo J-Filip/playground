@@ -243,7 +243,7 @@ function copyTextArea() {
 
         </form>
       </div>
-      <div class="tile is-child ">
+      <div class="tile is-child has-text-centered">
         <button on:click={copyTextArea} class="button is-primary"
           >Formatiraj&Kopiraj</button
         >
