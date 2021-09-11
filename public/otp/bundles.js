@@ -300,29 +300,29 @@
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[27] = list[i];
+    	child_ctx[36] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[30] = list[i];
+    	child_ctx[39] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[33] = list[i];
+    	child_ctx[42] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_3(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[36] = list[i];
+    	child_ctx[45] = list[i];
     	return child_ctx;
     }
 
-    // (180:10) {#if forUser.text !== 'za sebe'}
+    // (230:10) {#if forUser.text !== 'za sebe'}
     function create_if_block(ctx) {
     	let div1;
     	let label;
@@ -356,7 +356,7 @@
     			set_input_value(input, /*mailSender*/ ctx[0]);
 
     			if (!mounted) {
-    				dispose = listen(input, "input", /*input_input_handler*/ ctx[17]);
+    				dispose = listen(input, "input", /*input_input_handler*/ ctx[24]);
     				mounted = true;
     			}
     		},
@@ -373,13 +373,13 @@
     	};
     }
 
-    // (213:16) {#each users as user}
+    // (263:16) {#each users as user}
     function create_each_block_3(ctx) {
     	let label;
     	let input;
     	let input_value_value;
     	let t0;
-    	let t1_value = /*user*/ ctx[36].name + "";
+    	let t1_value = /*user*/ ctx[45].name + "";
     	let t1;
     	let t2;
     	let mounted;
@@ -394,9 +394,9 @@
     			t2 = space();
     			attr(input, "class", "is-small");
     			attr(input, "type", "radio");
-    			input.__value = input_value_value = /*user*/ ctx[36];
+    			input.__value = input_value_value = /*user*/ ctx[45];
     			input.value = input.__value;
-    			/*$$binding_groups*/ ctx[19][0].push(input);
+    			/*$$binding_groups*/ ctx[26][0].push(input);
     			attr(label, "class", "radio");
     		},
     		m(target, anchor) {
@@ -408,7 +408,7 @@
     			append(label, t2);
 
     			if (!mounted) {
-    				dispose = listen(input, "change", /*input_change_handler*/ ctx[18]);
+    				dispose = listen(input, "change", /*input_change_handler*/ ctx[25]);
     				mounted = true;
     			}
     		},
@@ -419,17 +419,17 @@
     		},
     		d(detaching) {
     			if (detaching) detach(label);
-    			/*$$binding_groups*/ ctx[19][0].splice(/*$$binding_groups*/ ctx[19][0].indexOf(input), 1);
+    			/*$$binding_groups*/ ctx[26][0].splice(/*$$binding_groups*/ ctx[26][0].indexOf(input), 1);
     			mounted = false;
     			dispose();
     		}
     	};
     }
 
-    // (236:20) {#each mainBodies as main}
+    // (286:20) {#each mainBodies as main}
     function create_each_block_2(ctx) {
     	let option;
-    	let t0_value = /*main*/ ctx[33].text + "";
+    	let t0_value = /*main*/ ctx[42].text + "";
     	let t0;
     	let t1;
     	let option_value_value;
@@ -439,7 +439,7 @@
     			option = element("option");
     			t0 = text(t0_value);
     			t1 = space();
-    			option.__value = option_value_value = /*main*/ ctx[33];
+    			option.__value = option_value_value = /*main*/ ctx[42];
     			option.value = option.__value;
     		},
     		m(target, anchor) {
@@ -454,10 +454,10 @@
     	};
     }
 
-    // (258:20) {#each operatingSystems as system}
+    // (308:20) {#each operatingSystems as system}
     function create_each_block_1(ctx) {
     	let option;
-    	let t0_value = /*system*/ ctx[30].os + "";
+    	let t0_value = /*system*/ ctx[39].os + "";
     	let t0;
     	let t1;
     	let option_value_value;
@@ -467,7 +467,7 @@
     			option = element("option");
     			t0 = text(t0_value);
     			t1 = space();
-    			option.__value = option_value_value = /*system*/ ctx[30];
+    			option.__value = option_value_value = /*system*/ ctx[39];
     			option.value = option.__value;
     		},
     		m(target, anchor) {
@@ -482,13 +482,13 @@
     	};
     }
 
-    // (272:14) {#each actions as action}
+    // (322:14) {#each actions as action}
     function create_each_block(ctx) {
     	let label;
     	let input;
     	let input_value_value;
     	let t0;
-    	let t1_value = /*action*/ ctx[27].name + "";
+    	let t1_value = /*action*/ ctx[36].name + "";
     	let t1;
     	let t2;
     	let mounted;
@@ -503,9 +503,9 @@
     			t2 = space();
     			attr(input, "class", "is-small");
     			attr(input, "type", "radio");
-    			input.__value = input_value_value = /*action*/ ctx[27];
+    			input.__value = input_value_value = /*action*/ ctx[36];
     			input.value = input.__value;
-    			/*$$binding_groups*/ ctx[19][1].push(input);
+    			/*$$binding_groups*/ ctx[26][1].push(input);
     			attr(label, "class", "radio");
     		},
     		m(target, anchor) {
@@ -517,7 +517,7 @@
     			append(label, t2);
 
     			if (!mounted) {
-    				dispose = listen(input, "change", /*input_change_handler_1*/ ctx[22]);
+    				dispose = listen(input, "change", /*input_change_handler_1*/ ctx[29]);
     				mounted = true;
     			}
     		},
@@ -528,7 +528,7 @@
     		},
     		d(detaching) {
     			if (detaching) detach(label);
-    			/*$$binding_groups*/ ctx[19][1].splice(/*$$binding_groups*/ ctx[19][1].indexOf(input), 1);
+    			/*$$binding_groups*/ ctx[26][1].splice(/*$$binding_groups*/ ctx[26][1].indexOf(input), 1);
     			mounted = false;
     			dispose();
     		}
@@ -536,7 +536,7 @@
     }
 
     function create_fragment$1(ctx) {
-    	let div31;
+    	let div34;
     	let div10;
     	let div8;
     	let form;
@@ -568,8 +568,8 @@
     	let div9;
     	let button;
     	let t14;
-    	let div30;
-    	let div29;
+    	let div33;
+    	let div32;
     	let div19;
     	let div11;
     	let t16;
@@ -597,33 +597,45 @@
     	let t25;
     	let div25;
     	let t26;
+    	let div30;
     	let div28;
+    	let t28;
+    	let div29;
+    	let label9;
+    	let input4;
+    	let t29;
+    	let t30;
+    	let label10;
+    	let input5;
+    	let t31;
+    	let t32;
+    	let div31;
     	let textarea;
     	let mounted;
     	let dispose;
     	let if_block = /*forUser*/ ctx[2].text !== 'za sebe' && create_if_block(ctx);
-    	let each_value_3 = /*users*/ ctx[10];
+    	let each_value_3 = /*users*/ ctx[12];
     	let each_blocks_3 = [];
 
     	for (let i = 0; i < each_value_3.length; i += 1) {
     		each_blocks_3[i] = create_each_block_3(get_each_context_3(ctx, each_value_3, i));
     	}
 
-    	let each_value_2 = /*mainBodies*/ ctx[11];
+    	let each_value_2 = /*mainBodies*/ ctx[13];
     	let each_blocks_2 = [];
 
     	for (let i = 0; i < each_value_2.length; i += 1) {
     		each_blocks_2[i] = create_each_block_2(get_each_context_2(ctx, each_value_2, i));
     	}
 
-    	let each_value_1 = /*operatingSystems*/ ctx[12];
+    	let each_value_1 = /*operatingSystems*/ ctx[14];
     	let each_blocks_1 = [];
 
     	for (let i = 0; i < each_value_1.length; i += 1) {
     		each_blocks_1[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
     	}
 
-    	let each_value = /*actions*/ ctx[13];
+    	let each_value = /*actions*/ ctx[15];
     	let each_blocks = [];
 
     	for (let i = 0; i < each_value.length; i += 1) {
@@ -632,7 +644,7 @@
 
     	return {
     		c() {
-    			div31 = element("div");
+    			div34 = element("div");
     			div10 = element("div");
     			div8 = element("div");
     			form = element("form");
@@ -668,10 +680,10 @@
     			t12 = space();
     			div9 = element("div");
     			button = element("button");
-    			button.textContent = "Kopiraj";
+    			button.textContent = "Formatiraj&Kopiraj";
     			t14 = space();
-    			div30 = element("div");
-    			div29 = element("div");
+    			div33 = element("div");
+    			div32 = element("div");
     			div19 = element("div");
     			div11 = element("div");
     			div11.innerHTML = `<label class="label">Od:</label>`;
@@ -723,18 +735,30 @@
     			}
 
     			t26 = space();
+    			div30 = element("div");
     			div28 = element("div");
+    			div28.innerHTML = `<label class="label">Nedostaje:</label>`;
+    			t28 = space();
+    			div29 = element("div");
+    			label9 = element("label");
+    			input4 = element("input");
+    			t29 = text("\r\n            Broj mobitela");
+    			t30 = space();
+    			label10 = element("label");
+    			input5 = element("input");
+    			t31 = text("\r\n            Serijski broj fizičkog tokena");
+    			t32 = space();
+    			div31 = element("div");
     			textarea = element("textarea");
     			attr(label0, "class", "label is-small");
-    			input0.value = /*tokenOwner*/ ctx[7];
+    			input0.value = /*tokenOwner*/ ctx[9];
     			attr(input0, "class", "input");
     			attr(input0, "type", "text");
     			attr(input0, "placeholder", "");
-    			input0.disabled = true;
     			attr(div0, "class", "control");
     			attr(div1, "class", "field");
     			attr(label1, "class", "label is-small");
-    			input1.value = /*tokenSerialNumber*/ ctx[6];
+    			input1.value = /*tokenSerialNumber*/ ctx[8];
     			attr(input1, "class", "input ");
     			attr(input1, "type", "text");
     			attr(input1, "placeholder", "");
@@ -742,7 +766,7 @@
     			attr(div2, "class", "control");
     			attr(div3, "class", "field");
     			attr(label2, "class", "label is-small");
-    			input2.value = /*userIdentificator*/ ctx[8];
+    			input2.value = /*userIdentificator*/ ctx[10];
     			attr(input2, "class", "input ");
     			attr(input2, "type", "text");
     			attr(input2, "placeholder", "");
@@ -750,7 +774,7 @@
     			attr(div4, "class", "control");
     			attr(div5, "class", "field");
     			attr(label3, "class", "label is-small");
-    			input3.value = /*activationCode*/ ctx[9];
+    			input3.value = /*activationCode*/ ctx[11];
     			attr(input3, "class", "input ");
     			attr(input3, "type", "text");
     			attr(input3, "placeholder", "");
@@ -760,7 +784,7 @@
     			attr(form, "class", "box");
     			attr(div8, "class", "tile is-child ");
     			attr(button, "class", "button is-primary");
-    			attr(div9, "class", "tile is-child has-text-centered ");
+    			attr(div9, "class", "tile is-child ");
     			attr(div10, "class", "tile is-4 is-vertical is-parent");
     			attr(div11, "class", "field ");
     			attr(div12, "class", "control");
@@ -768,13 +792,13 @@
     			attr(div14, "class", "field-body ml-3");
     			attr(div15, "class", "field is-small");
     			attr(select0, "id", "za");
-    			if (/*forUser*/ ctx[2] === void 0) add_render_callback(() => /*select0_change_handler*/ ctx[20].call(select0));
+    			if (/*forUser*/ ctx[2] === void 0) add_render_callback(() => /*select0_change_handler*/ ctx[27].call(select0));
     			attr(div16, "class", "select ");
     			attr(div17, "class", "field");
     			attr(div18, "class", "field-body ml-3");
     			attr(div19, "class", "field is-horizontal ");
     			attr(div20, "class", "field ");
-    			if (/*selectedOS*/ ctx[3] === void 0) add_render_callback(() => /*select1_change_handler*/ ctx[21].call(select1));
+    			if (/*selectedOS*/ ctx[3] === void 0) add_render_callback(() => /*select1_change_handler*/ ctx[28].call(select1));
     			attr(div21, "class", "select ");
     			attr(div22, "class", "control");
     			attr(div23, "class", "field");
@@ -782,20 +806,27 @@
     			attr(div25, "class", "control ");
     			attr(div26, "class", "field-body");
     			attr(div27, "class", "field is-horizontal");
+    			attr(div28, "class", "field ");
+    			attr(input4, "type", "checkbox");
+    			attr(label9, "class", "checkbox");
+    			attr(input5, "type", "checkbox");
+    			attr(label10, "class", "checkbox");
+    			attr(div29, "class", "field ml-5");
+    			attr(div30, "class", "field is-horizontal");
     			attr(textarea, "id", "mail");
-    			textarea.value = /*mail*/ ctx[5];
+    			textarea.value = /*mail*/ ctx[7];
     			attr(textarea, "class", "textarea is-primary");
     			attr(textarea, "placeholder", "Write something ...");
-    			attr(textarea, "cols", "60");
-    			attr(textarea, "rows", "15");
-    			attr(div28, "class", "tile is-child ");
-    			attr(div29, "class", "tile is-child box");
-    			attr(div30, "class", "tile is-vertical is-parent");
-    			attr(div31, "class", "tile is-ancestor");
+    			attr(textarea, "cols", "65");
+    			attr(textarea, "rows", "17");
+    			attr(div31, "class", "tile is-child ");
+    			attr(div32, "class", "tile is-child box");
+    			attr(div33, "class", "tile is-vertical is-parent");
+    			attr(div34, "class", "tile is-ancestor");
     		},
     		m(target, anchor) {
-    			insert(target, div31, anchor);
-    			append(div31, div10);
+    			insert(target, div34, anchor);
+    			append(div34, div10);
     			append(div10, div8);
     			append(div8, form);
     			append(form, div1);
@@ -826,10 +857,10 @@
     			append(div10, t12);
     			append(div10, div9);
     			append(div9, button);
-    			append(div31, t14);
-    			append(div31, div30);
-    			append(div30, div29);
-    			append(div29, div19);
+    			append(div34, t14);
+    			append(div34, div33);
+    			append(div33, div32);
+    			append(div32, div19);
     			append(div19, div11);
     			append(div19, t16);
     			append(div19, div14);
@@ -853,8 +884,8 @@
     			}
 
     			select_option(select0, /*forUser*/ ctx[2]);
-    			append(div29, t20);
-    			append(div29, div27);
+    			append(div32, t20);
+    			append(div32, div27);
     			append(div27, div20);
     			append(div27, t22);
     			append(div27, div26);
@@ -877,16 +908,34 @@
     				each_blocks[i].m(div25, null);
     			}
 
-    			append(div29, t26);
-    			append(div29, div28);
-    			append(div28, textarea);
+    			append(div32, t26);
+    			append(div32, div30);
+    			append(div30, div28);
+    			append(div30, t28);
+    			append(div30, div29);
+    			append(div29, label9);
+    			append(label9, input4);
+    			input4.checked = /*yesPhoneMissing*/ ctx[5];
+    			append(label9, t29);
+    			append(div29, t30);
+    			append(div29, label10);
+    			append(label10, input5);
+    			input5.checked = /*yesTokenMissing*/ ctx[6];
+    			append(label10, t31);
+    			append(div32, t32);
+    			append(div32, div31);
+    			append(div31, textarea);
 
     			if (!mounted) {
     				dispose = [
     					listen(button, "click", copyTextArea),
-    					listen(select0, "change", /*getOption*/ ctx[14]),
-    					listen(select0, "change", /*select0_change_handler*/ ctx[20]),
-    					listen(select1, "change", /*select1_change_handler*/ ctx[21])
+    					listen(select0, "change", /*getOption*/ ctx[16]),
+    					listen(select0, "change", /*select0_change_handler*/ ctx[27]),
+    					listen(select1, "change", /*select1_change_handler*/ ctx[28]),
+    					listen(input4, "change", /*input4_change_handler*/ ctx[30]),
+    					listen(input4, "change", /*addPhoneMissing*/ ctx[17]),
+    					listen(input5, "change", /*input5_change_handler*/ ctx[31]),
+    					listen(input5, "change", /*addTokenMissing*/ ctx[18])
     				];
 
     				mounted = true;
@@ -906,8 +955,8 @@
     				if_block = null;
     			}
 
-    			if (dirty[0] & /*users, selectedUser*/ 1026) {
-    				each_value_3 = /*users*/ ctx[10];
+    			if (dirty[0] & /*users, selectedUser*/ 4098) {
+    				each_value_3 = /*users*/ ctx[12];
     				let i;
 
     				for (i = 0; i < each_value_3.length; i += 1) {
@@ -929,8 +978,8 @@
     				each_blocks_3.length = each_value_3.length;
     			}
 
-    			if (dirty[0] & /*mainBodies*/ 2048) {
-    				each_value_2 = /*mainBodies*/ ctx[11];
+    			if (dirty[0] & /*mainBodies*/ 8192) {
+    				each_value_2 = /*mainBodies*/ ctx[13];
     				let i;
 
     				for (i = 0; i < each_value_2.length; i += 1) {
@@ -952,12 +1001,12 @@
     				each_blocks_2.length = each_value_2.length;
     			}
 
-    			if (dirty[0] & /*forUser, mainBodies*/ 2052) {
+    			if (dirty[0] & /*forUser, mainBodies*/ 8196) {
     				select_option(select0, /*forUser*/ ctx[2]);
     			}
 
-    			if (dirty[0] & /*operatingSystems*/ 4096) {
-    				each_value_1 = /*operatingSystems*/ ctx[12];
+    			if (dirty[0] & /*operatingSystems*/ 16384) {
+    				each_value_1 = /*operatingSystems*/ ctx[14];
     				let i;
 
     				for (i = 0; i < each_value_1.length; i += 1) {
@@ -979,12 +1028,12 @@
     				each_blocks_1.length = each_value_1.length;
     			}
 
-    			if (dirty[0] & /*selectedOS, operatingSystems*/ 4104) {
+    			if (dirty[0] & /*selectedOS, operatingSystems*/ 16392) {
     				select_option(select1, /*selectedOS*/ ctx[3]);
     			}
 
-    			if (dirty[0] & /*actions, selectedAction*/ 8208) {
-    				each_value = /*actions*/ ctx[13];
+    			if (dirty[0] & /*actions, selectedAction*/ 32784) {
+    				each_value = /*actions*/ ctx[15];
     				let i;
 
     				for (i = 0; i < each_value.length; i += 1) {
@@ -1006,14 +1055,22 @@
     				each_blocks.length = each_value.length;
     			}
 
-    			if (dirty[0] & /*mail*/ 32) {
-    				textarea.value = /*mail*/ ctx[5];
+    			if (dirty[0] & /*yesPhoneMissing*/ 32) {
+    				input4.checked = /*yesPhoneMissing*/ ctx[5];
+    			}
+
+    			if (dirty[0] & /*yesTokenMissing*/ 64) {
+    				input5.checked = /*yesTokenMissing*/ ctx[6];
+    			}
+
+    			if (dirty[0] & /*mail*/ 128) {
+    				textarea.value = /*mail*/ ctx[7];
     			}
     		},
     		i: noop,
     		o: noop,
     		d(detaching) {
-    			if (detaching) detach(div31);
+    			if (detaching) detach(div34);
     			if (if_block) if_block.d();
     			destroy_each(each_blocks_3, detaching);
     			destroy_each(each_blocks_2, detaching);
@@ -1029,12 +1086,14 @@
     	let textToCopy = document.querySelector('#mail');
 
     	//console.log(textToCopy.value);
-    	let split = textToCopy.value.split('\n\n');
+    	let mailParts = textToCopy.value.split('\n\n');
 
-    	//console.log(split);
-    	let back = split.join('\n');
+    	mailParts = mailParts.filter(part => {
+    		return part !== '';
+    	});
 
-    	console.log(back);
+    	console.log(mailParts);
+    	let back = mailParts.join('\n');
     	textToCopy.value = back;
     	textToCopy.select();
     	document.execCommand('copy');
@@ -1052,9 +1111,12 @@
     	document.querySelector("#log > tbody > tr:nth-child(2) > td:nth-child(3)").innerText.search('phone');
     	let log = document.querySelector("#log > tbody > tr:nth-child(2) > td:nth-child(3)").innerText;
     	let activationCode = log.slice(indexActivation + 22, indexActivation + 27);
-
-    	//let activationCode = '010101';
     	let mailSender = '';
+    	let yesPhoneMissing = false;
+    	let phoneMissing = '';
+    	let yesTokenMissing = false;
+    	let tokenMissing = '';
+    	let combMsg = '';
 
     	let users = [
     		{
@@ -1105,7 +1167,7 @@ mToken je uspješno`,
     			msg: `U slučaju da se radi o sustavu iOS, za aktivaciju se koriste inicijalna lozinka i korisnički identifikator.
 
 Inicijalna lozinka: ${activationCode}
-Korisnički identifikator: ${userIdentificator} `,
+Korisnički identifikator: ${userIdentificator}`,
     			os: 'iOS'
     		},
     		{
@@ -1142,9 +1204,48 @@ Korisnički identifikator: ${userIdentificator}`,
     		let selectedValue = select.options[select.selectedIndex].innerText;
 
     		if (selectedValue === 'za sebe ') {
-    			console.log(selectedValue);
     			$$invalidate(0, mailSender = tokenOwner);
     		}
+    	}
+
+    	function addPhoneMissing() {
+    		if (yesPhoneMissing === true && yesTokenMissing === true) {
+    			$$invalidate(20, tokenMissing = '');
+    			$$invalidate(19, phoneMissing = '');
+    			$$invalidate(5, yesPhoneMissing = false);
+    			$$invalidate(6, yesTokenMissing = false);
+    			$$invalidate(21, combMsg = 'Također, molimo da nam u povratnoj poruci pošaljete broj mobitela na kojem će se aplikacija koristiti te serijski broj neispravnog fizičkog tokena.');
+    			return;
+    		}
+
+    		if (yesPhoneMissing === true) {
+    			$$invalidate(21, combMsg = '');
+    			$$invalidate(19, phoneMissing = 'Također, molimo da nam u povratnoj poruci pošaljete broj mobitela na kojem će se aplikacija koristiti.');
+    			return;
+    		}
+
+    		$$invalidate(19, phoneMissing = '');
+    		return;
+    	}
+
+    	function addTokenMissing() {
+    		if (yesPhoneMissing === true && yesTokenMissing === true) {
+    			$$invalidate(20, tokenMissing = '');
+    			$$invalidate(19, phoneMissing = '');
+    			$$invalidate(5, yesPhoneMissing = false);
+    			$$invalidate(6, yesTokenMissing = false);
+    			$$invalidate(21, combMsg = 'Također, molimo da nam u povratnoj poruci pošaljete broj mobitela na kojem će se aplikacija koristiti te serijski broj neispravnog fizičkog tokena.');
+    			return;
+    		}
+
+    		if (yesTokenMissing === true) {
+    			$$invalidate(21, combMsg = '');
+    			$$invalidate(20, tokenMissing = 'Također, molimo da nam u povratnoj poruci pošaljete serijski broj neispravnog fizičkog tokena.');
+    			return;
+    		}
+
+    		$$invalidate(20, tokenMissing = '');
+    		return;
     	}
 
     	const $$binding_groups = [[], []];
@@ -1162,13 +1263,13 @@ Korisnički identifikator: ${userIdentificator}`,
     	function select0_change_handler() {
     		forUser = select_value(this);
     		$$invalidate(2, forUser);
-    		$$invalidate(11, mainBodies);
+    		$$invalidate(13, mainBodies);
     	}
 
     	function select1_change_handler() {
     		selectedOS = select_value(this);
     		$$invalidate(3, selectedOS);
-    		$$invalidate(12, operatingSystems);
+    		$$invalidate(14, operatingSystems);
     	}
 
     	function input_change_handler_1() {
@@ -1176,20 +1277,36 @@ Korisnički identifikator: ${userIdentificator}`,
     		$$invalidate(4, selectedAction);
     	}
 
+    	function input4_change_handler() {
+    		yesPhoneMissing = this.checked;
+    		$$invalidate(5, yesPhoneMissing);
+    	}
+
+    	function input5_change_handler() {
+    		yesTokenMissing = this.checked;
+    		$$invalidate(6, yesTokenMissing);
+    	}
+
     	$$self.$$.update = () => {
     		if ($$self.$$.dirty[0] & /*selectedUser, mailSender, forUser*/ 7) {
-    			$$invalidate(16, helloUser = `${selectedUser.msg} ${mailSender}${forUser.msg}`);
+    			$$invalidate(23, helloUser = `${selectedUser.msg} ${mailSender}${forUser.msg}`);
     		}
 
     		if ($$self.$$.dirty[0] & /*selectedAction, selectedOS*/ 24) {
-    			$$invalidate(15, osAction = `${selectedAction.status} ${selectedOS.msg}`);
+    			$$invalidate(22, osAction = `${selectedAction.status} ${selectedOS.msg}`);
     		}
 
-    		if ($$self.$$.dirty[0] & /*helloUser, osAction, selectedAction*/ 98320) {
+    		if ($$self.$$.dirty[0] & /*helloUser, osAction, selectedAction, phoneMissing, tokenMissing, combMsg*/ 16252944) {
     			// main msg
-    			$$invalidate(5, mail = `${helloUser} ${osAction} 
+    			$$invalidate(7, mail = `${helloUser} ${osAction} 
 
 ${selectedAction.msg}
+
+${phoneMissing}
+
+${tokenMissing}
+
+${combMsg}
 
 Za sve ostale upite stojimo Vam na raspolaganju.`);
     		}
@@ -1201,6 +1318,8 @@ Za sve ostale upite stojimo Vam na raspolaganju.`);
     		forUser,
     		selectedOS,
     		selectedAction,
+    		yesPhoneMissing,
+    		yesTokenMissing,
     		mail,
     		tokenSerialNumber,
     		tokenOwner,
@@ -1211,6 +1330,11 @@ Za sve ostale upite stojimo Vam na raspolaganju.`);
     		operatingSystems,
     		actions,
     		getOption,
+    		addPhoneMissing,
+    		addTokenMissing,
+    		phoneMissing,
+    		tokenMissing,
+    		combMsg,
     		osAction,
     		helloUser,
     		input_input_handler,
@@ -1218,7 +1342,9 @@ Za sve ostale upite stojimo Vam na raspolaganju.`);
     		$$binding_groups,
     		select0_change_handler,
     		select1_change_handler,
-    		input_change_handler_1
+    		input_change_handler_1,
+    		input4_change_handler,
+    		input5_change_handler
     	];
     }
 

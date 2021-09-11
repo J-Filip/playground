@@ -185,7 +185,7 @@ function copyTextArea() {
                 class="input"
                 type="text"
                 placeholder=""
-                disabled
+                
               />
             </div>
           </div>
