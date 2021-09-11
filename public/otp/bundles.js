@@ -341,7 +341,7 @@
     			div0 = element("div");
     			input = element("input");
     			attr(label, "class", "label is-small");
-    			attr(input, "class", "input is-small");
+    			attr(input, "class", "input");
     			attr(input, "type", "text");
     			attr(input, "placeholder", "");
     			attr(div0, "class", "control");
@@ -536,7 +536,7 @@
     }
 
     function create_fragment$1(ctx) {
-    	let div32;
+    	let div31;
     	let div10;
     	let div8;
     	let form;
@@ -568,9 +568,9 @@
     	let div9;
     	let button;
     	let t14;
-    	let div31;
     	let div30;
-    	let div20;
+    	let div29;
+    	let div19;
     	let div11;
     	let t16;
     	let div14;
@@ -579,26 +579,25 @@
     	let t17;
     	let div15;
     	let t19;
-    	let div19;
     	let div18;
     	let div17;
     	let div16;
     	let select0;
     	let t20;
-    	let div28;
-    	let div21;
-    	let t22;
     	let div27;
-    	let div24;
+    	let div20;
+    	let t22;
+    	let div26;
     	let div23;
     	let div22;
+    	let div21;
     	let select1;
     	let t23;
-    	let div25;
+    	let div24;
     	let t25;
-    	let div26;
+    	let div25;
     	let t26;
-    	let div29;
+    	let div28;
     	let textarea;
     	let mounted;
     	let dispose;
@@ -633,7 +632,7 @@
 
     	return {
     		c() {
-    			div32 = element("div");
+    			div31 = element("div");
     			div10 = element("div");
     			div8 = element("div");
     			form = element("form");
@@ -671,9 +670,9 @@
     			button = element("button");
     			button.textContent = "Kopiraj";
     			t14 = space();
-    			div31 = element("div");
     			div30 = element("div");
-    			div20 = element("div");
+    			div29 = element("div");
+    			div19 = element("div");
     			div11 = element("div");
     			div11.innerHTML = `<label class="label">Od:</label>`;
     			t16 = space();
@@ -689,7 +688,6 @@
     			div15 = element("div");
     			div15.innerHTML = `<label class="label">Za:</label>`;
     			t19 = space();
-    			div19 = element("div");
     			div18 = element("div");
     			div17 = element("div");
     			div16 = element("div");
@@ -700,14 +698,14 @@
     			}
 
     			t20 = space();
-    			div28 = element("div");
-    			div21 = element("div");
-    			div21.innerHTML = `<label class="label">OS:</label>`;
-    			t22 = space();
     			div27 = element("div");
-    			div24 = element("div");
+    			div20 = element("div");
+    			div20.innerHTML = `<label class="label">OS:</label>`;
+    			t22 = space();
+    			div26 = element("div");
     			div23 = element("div");
     			div22 = element("div");
+    			div21 = element("div");
     			select1 = element("select");
 
     			for (let i = 0; i < each_blocks_1.length; i += 1) {
@@ -715,21 +713,21 @@
     			}
 
     			t23 = space();
-    			div25 = element("div");
-    			div25.innerHTML = `<label class="label">Vrsta akcije:</label>`;
+    			div24 = element("div");
+    			div24.innerHTML = `<label class="label">Vrsta akcije:</label>`;
     			t25 = space();
-    			div26 = element("div");
+    			div25 = element("div");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
     			t26 = space();
-    			div29 = element("div");
+    			div28 = element("div");
     			textarea = element("textarea");
     			attr(label0, "class", "label is-small");
     			input0.value = /*tokenOwner*/ ctx[7];
-    			attr(input0, "class", "input is-small");
+    			attr(input0, "class", "input");
     			attr(input0, "type", "text");
     			attr(input0, "placeholder", "");
     			input0.disabled = true;
@@ -737,7 +735,7 @@
     			attr(div1, "class", "field");
     			attr(label1, "class", "label is-small");
     			input1.value = /*tokenSerialNumber*/ ctx[6];
-    			attr(input1, "class", "input is-small");
+    			attr(input1, "class", "input ");
     			attr(input1, "type", "text");
     			attr(input1, "placeholder", "");
     			input1.disabled = true;
@@ -745,7 +743,7 @@
     			attr(div3, "class", "field");
     			attr(label2, "class", "label is-small");
     			input2.value = /*userIdentificator*/ ctx[8];
-    			attr(input2, "class", "input is-small");
+    			attr(input2, "class", "input ");
     			attr(input2, "type", "text");
     			attr(input2, "placeholder", "");
     			input2.disabled = true;
@@ -753,7 +751,7 @@
     			attr(div5, "class", "field");
     			attr(label3, "class", "label is-small");
     			input3.value = /*activationCode*/ ctx[9];
-    			attr(input3, "class", "input is-small");
+    			attr(input3, "class", "input ");
     			attr(input3, "type", "text");
     			attr(input3, "placeholder", "");
     			input3.disabled = true;
@@ -762,43 +760,42 @@
     			attr(form, "class", "box");
     			attr(div8, "class", "tile is-child ");
     			attr(button, "class", "button is-primary");
-    			attr(div9, "class", "tile is-child ");
+    			attr(div9, "class", "tile is-child has-text-centered ");
     			attr(div10, "class", "tile is-4 is-vertical is-parent");
     			attr(div11, "class", "field ");
     			attr(div12, "class", "control");
     			attr(div13, "class", "field");
-    			attr(div14, "class", "field-body");
+    			attr(div14, "class", "field-body ml-3");
     			attr(div15, "class", "field is-small");
     			attr(select0, "id", "za");
     			if (/*forUser*/ ctx[2] === void 0) add_render_callback(() => /*select0_change_handler*/ ctx[20].call(select0));
     			attr(div16, "class", "select ");
-    			attr(div17, "class", "control");
-    			attr(div18, "class", "field");
-    			attr(div19, "class", "field-body");
-    			attr(div20, "class", "field is-horizontal ");
-    			attr(div21, "class", "field ");
+    			attr(div17, "class", "field");
+    			attr(div18, "class", "field-body ml-3");
+    			attr(div19, "class", "field is-horizontal ");
+    			attr(div20, "class", "field ");
     			if (/*selectedOS*/ ctx[3] === void 0) add_render_callback(() => /*select1_change_handler*/ ctx[21].call(select1));
-    			attr(div22, "class", "select ");
-    			attr(div23, "class", "control");
-    			attr(div24, "class", "field");
-    			attr(div25, "class", "field is-small");
-    			attr(div26, "class", "control ");
-    			attr(div27, "class", "field-body");
-    			attr(div28, "class", "field is-horizontal");
+    			attr(div21, "class", "select ");
+    			attr(div22, "class", "control");
+    			attr(div23, "class", "field");
+    			attr(div24, "class", "field is-small");
+    			attr(div25, "class", "control ");
+    			attr(div26, "class", "field-body");
+    			attr(div27, "class", "field is-horizontal");
     			attr(textarea, "id", "mail");
     			textarea.value = /*mail*/ ctx[5];
     			attr(textarea, "class", "textarea is-primary");
     			attr(textarea, "placeholder", "Write something ...");
     			attr(textarea, "cols", "60");
     			attr(textarea, "rows", "15");
-    			attr(div29, "class", "tile is-child ");
-    			attr(div30, "class", "tile is-child box");
-    			attr(div31, "class", "tile is-vertical is-parent");
-    			attr(div32, "class", "tile is-ancestor");
+    			attr(div28, "class", "tile is-child ");
+    			attr(div29, "class", "tile is-child box");
+    			attr(div30, "class", "tile is-vertical is-parent");
+    			attr(div31, "class", "tile is-ancestor");
     		},
     		m(target, anchor) {
-    			insert(target, div32, anchor);
-    			append(div32, div10);
+    			insert(target, div31, anchor);
+    			append(div31, div10);
     			append(div10, div8);
     			append(div8, form);
     			append(form, div1);
@@ -829,13 +826,13 @@
     			append(div10, t12);
     			append(div10, div9);
     			append(div9, button);
-    			append(div32, t14);
-    			append(div32, div31);
+    			append(div31, t14);
     			append(div31, div30);
-    			append(div30, div20);
-    			append(div20, div11);
-    			append(div20, t16);
-    			append(div20, div14);
+    			append(div30, div29);
+    			append(div29, div19);
+    			append(div19, div11);
+    			append(div19, t16);
+    			append(div19, div14);
     			append(div14, div13);
     			append(div13, div12);
 
@@ -843,10 +840,9 @@
     				each_blocks_3[i].m(div12, null);
     			}
 
-    			append(div20, t17);
-    			append(div20, div15);
-    			append(div20, t19);
-    			append(div20, div19);
+    			append(div19, t17);
+    			append(div19, div15);
+    			append(div19, t19);
     			append(div19, div18);
     			append(div18, div17);
     			append(div17, div16);
@@ -857,33 +853,33 @@
     			}
 
     			select_option(select0, /*forUser*/ ctx[2]);
-    			append(div30, t20);
-    			append(div30, div28);
-    			append(div28, div21);
-    			append(div28, t22);
-    			append(div28, div27);
-    			append(div27, div24);
-    			append(div24, div23);
+    			append(div29, t20);
+    			append(div29, div27);
+    			append(div27, div20);
+    			append(div27, t22);
+    			append(div27, div26);
+    			append(div26, div23);
     			append(div23, div22);
-    			append(div22, select1);
+    			append(div22, div21);
+    			append(div21, select1);
 
     			for (let i = 0; i < each_blocks_1.length; i += 1) {
     				each_blocks_1[i].m(select1, null);
     			}
 
     			select_option(select1, /*selectedOS*/ ctx[3]);
-    			append(div27, t23);
-    			append(div27, div25);
-    			append(div27, t25);
-    			append(div27, div26);
+    			append(div26, t23);
+    			append(div26, div24);
+    			append(div26, t25);
+    			append(div26, div25);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(div26, null);
+    				each_blocks[i].m(div25, null);
     			}
 
-    			append(div30, t26);
-    			append(div30, div29);
-    			append(div29, textarea);
+    			append(div29, t26);
+    			append(div29, div28);
+    			append(div28, textarea);
 
     			if (!mounted) {
     				dispose = [
@@ -999,7 +995,7 @@
     					} else {
     						each_blocks[i] = create_each_block(child_ctx);
     						each_blocks[i].c();
-    						each_blocks[i].m(div26, null);
+    						each_blocks[i].m(div25, null);
     					}
     				}
 
@@ -1017,7 +1013,7 @@
     		i: noop,
     		o: noop,
     		d(detaching) {
-    			if (detaching) detach(div32);
+    			if (detaching) detach(div31);
     			if (if_block) if_block.d();
     			destroy_each(each_blocks_3, detaching);
     			destroy_each(each_blocks_2, detaching);
@@ -1293,6 +1289,34 @@ Za sve ostale upite stojimo Vam na raspolaganju.`);
     let placement = document.createElement("section");
     background.after(placement);
 
+    //
+     let reactivateButton = document.querySelector("#reactivate-btn");
+    let reactivateLink = reactivateButton.getAttribute('href');
+
+    let newBtn = document.createElement('button');
+    newBtn.classList.add('button', 'is-primary', 'ml-1');
+
+    newBtn.innerText = 'Reaktiviraj&Osvježi';
+    reactivateButton.after(newBtn);
+
+    newBtn.addEventListener('click', async function handler() {
+        ///this will execute only once
+        let ask = confirm('Reaktiviraj token i osvježi stranicu?');
+        if(ask == true){
+            let newtab = window.open(reactivateLink, '_blank');
+            await sleep(2000);
+            newtab.close();
+            let home = window.location;
+            home.reload();
+        }
+        return false;
+    });
+
+    async function sleep(ms) {
+        return new Promise((resolve) => {
+          setTimeout(resolve, ms);
+        });
+      }
 
     const app = new App({
         target:placement

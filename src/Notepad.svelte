@@ -132,7 +132,7 @@ function getOption(){
             <div class="control">
               <input
                 value={tokenOwner}
-                class="input is-small"
+                class="input"
                 type="text"
                 placeholder=""
                 disabled
@@ -145,7 +145,7 @@ function getOption(){
             <div class="control">
               <input
                 value={tokenSerialNumber}
-                class="input is-small"
+                class="input "
                 type="text"
                 placeholder=""
                 disabled
@@ -157,7 +157,7 @@ function getOption(){
             <div class="control">
               <input
                 value={userIdentificator}
-                class="input is-small"
+                class="input "
                 type="text"
                 placeholder=""
                 disabled
@@ -169,7 +169,7 @@ function getOption(){
             <div class="control">
               <input
                 value={activationCode}
-                class="input is-small"
+                class="input "
                 type="text"
                 placeholder=""
                 disabled
@@ -183,7 +183,7 @@ function getOption(){
               <div class="control">
                 <input 
                   bind:value={mailSender}
-                  class="input is-small"
+                  class="input"
                   type="text"
                   placeholder=""
                 />
@@ -193,7 +193,7 @@ function getOption(){
 
         </form>
       </div>
-      <div class="tile is-child ">
+      <div class="tile is-child has-text-centered ">
         <button on:click={copyTextArea} class="button is-primary"
           >Kopiraj</button
         >
@@ -207,7 +207,7 @@ function getOption(){
             <label class="label">Od:</label>
           </div>
 
-          <div class="field-body">
+          <div class="field-body ml-3">
             <div class="field">
               <div class="control">
                 {#each users as user}
@@ -228,9 +228,9 @@ function getOption(){
           <div class="field is-small">
             <label class="label">Za:</label>
           </div>
-          <div class="field-body">
+          <div class="field-body ml-3">
             <div class="field">
-              <div class="control">
+             
                 <div class="select ">
                   <select id= 'za'on:change={getOption} bind:value={forUser}>
                     {#each mainBodies as main}
@@ -239,7 +239,7 @@ function getOption(){
                       </option>
                     {/each}
                   </select>
-                </div>
+               
               </div>
             </div>
           </div>
@@ -284,74 +284,9 @@ function getOption(){
           </div>
         </div>
 
-        <!-- 
-         <div class="field is-horizontal">
-          <div class="field-label is-small">
-            <label class="label">Vrsta:</label>
-          </div>
-          <div class="field-body">
-            <div class="field is-narrow">
-              <div class="control ">
-                <label class="radio">
-                  <input type="radio" name="hellos" bind:group={helloMsg} value= {gdin}>
-                  Gdin
-                </label>
-                <label class="radio">
-                  <input type="radio" name="hellos" bind:group={helloMsg} value= {gđa}>
-                  Gđa
-                </label>
-              </div>
-            </div>
-          </div>
-          
-        </div>
 
-        <div class="field ">
-          <div class="field-label is-small">
-            <label class="label">Tko kome:</label>
-          </div>
-          <div class="field-body">
-            <div class="field is-narrow">
-              <div class="control">
-                <div class="select is-small">
-                  <select bind:value= {helloMsg} >
-                    {#each hellos as hello}
-                    <option value={hello.msg}>
-                      {hello.text}
-                    </option>
-                  {/each}
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
 
         <!-- <div class="field is-horizontal">
-          <div class="field-label is-small">
-            <label class="label">Operativni sustav:</label>
-          </div>
-          <div class="field-body">
-            <div class="field is-narrow">
-              <div class="control ">
-                <label class="radio">
-                  <input type="radio" name="member">
-                  Android
-                </label>
-                <label class="radio">
-                  <input type="radio" name="member">
-                  iOS
-                </label>
-                <label class="radio">
-                  <input type="radio" name="member">
-                  Ne znam
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="field is-horizontal">
           <div class="field-label is-small">
             <label class="label">Ostalo:</label>
           </div>
@@ -366,9 +301,9 @@ function getOption(){
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
-      </div>  -->
+
 
         <div class="tile is-child ">
           <textarea
