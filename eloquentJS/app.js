@@ -253,3 +253,4 @@ function reverseArrayInPlace(array) {
 // console.log(deepEqual(obj, obj));
 
 // chapter 5 - higher order functions
+

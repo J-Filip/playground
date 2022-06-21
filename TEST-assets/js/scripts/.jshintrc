@@ -1,0 +1,20 @@
+// Extends existing configuration
+{
+    "extends": "../../../.jshintrc",
+    "predef"        : [         // Extra globals.
+        "_",
+        "Meio",
+        "JSON",
+        "edWait",
+        "edAlert",
+        "edLayout",
+        "edConfirm",
+        "edActionMenu",
+        "edMultiSelect",
+        "default_event_type",
+        "picker",
+        "sorted",
+        "cookieName",
+        "cookieDuration"
+    ]
+}

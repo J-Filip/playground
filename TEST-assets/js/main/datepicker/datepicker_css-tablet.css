@@ -1,0 +1,24 @@
+.datepicker_dashboard {
+	width: 442px;
+}
+.datepicker_dashboard .body {
+	width: 438px;
+	height: 242px;
+}
+
+.datepicker_dashboard .days .day {
+	height:34px;
+	font-size:20px;
+}
+.datepicker_dashboard .header .previous,
+.datepicker_dashboard .header .next,
+.datepicker_dashboard .header .closeButton {
+	background-image:none;
+	width:32px;
+	height:32px;
+	text-indent:0;
+	margin:0 20px;
+	top:0;
+	color: #fff;
+}
+
