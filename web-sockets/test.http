@@ -1,0 +1,13 @@
+
+DELETE http://localhost:3000/api/people/12
+###
+PUT http://localhost:3000/api/people/12
+
+###
+POST http://localhost:3000/api/people
+
+
+###
+GET http://localhost:3000/api/people
+
+23-622
