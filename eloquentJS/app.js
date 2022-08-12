@@ -653,4 +653,9 @@ verify(
 
 // NPM is two things: an online service where one can download (and upload) packages and a program (bundled with Node.js) that helps you install and manage them.
 
+<<<<<<< HEAD
 // CHapter 11
+=======
+// chapter 5 - higher order functions
+
+>>>>>>> fdbad740067f3ad34e5ae3931646fb4e6cad45bb
