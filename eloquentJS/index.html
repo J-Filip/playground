@@ -1,0 +1,58 @@
+<h1>Mountains</h1>
+
+<div id="mountains"></div>
+
+<script>
+  const MOUNTAINS = [
+    { name: 'Kilimanjaro', height: 5895, place: 'Tanzania' },
+    { name: 'Everest', height: 8848, place: 'Nepal' },
+    { name: 'Mount Fuji', height: 3776, place: 'Japan' },
+    { name: 'Vaalserberg', height: 323, place: 'Netherlands' },
+    { name: 'Denali', height: 6168, place: 'United States' },
+    { name: 'Popocatepetl', height: 5465, place: 'Mexico' },
+    { name: 'Mont Blanc', height: 4808, place: 'Italy/France' },
+  ];
+
+  const headings = ['name', 'height', 'place'];
+
+  // Your code here
+
+  let table = document.createElement('table');
+  let firstRow = document.createElement('tr');
+  table.appendChild(firstRow);
+
+  headings.forEach((element) => {
+    let x = document.createElement('th');
+    x.innerText = element;
+    firstRow.appendChild(x);
+  });
+
+  MOUNTAINS.forEach((element) => {
+    let row = document.createElement('tr');
+    let keys = Object.keys(element);
+    table.appendChild(row);
+
+    keys.forEach((key) => {
+      console.log(element[key]);
+      let rowData = document.createElement('td');
+      rowData.innerText = element[key];
+      row.appendChild(rowData);
+    });
+  });
+
+  let mountains = document.querySelector('#mountains');
+  mountains.appendChild(table);
+</script>
+
+<p>A paragraph with a <button>button</button>.</p>
+<script>
+  let para = document.querySelector("p");
+  let button = document.querySelector("button");
+  para.addEventListener("mousedown", () => {
+    console.log("Handler for paragraph.");
+  });
+  button.addEventListener("mousedown", event => {
+    console.log("Handler for button.");
+    if (event.button == 2) event.stopPropagation();
+  });
+</script>
