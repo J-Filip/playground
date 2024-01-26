@@ -2,6 +2,8 @@
  * CSV writer - class solution
  */
 
+import { appendFileSync, existsSync } from "fs";
+
 interface IPayment {
   id: number;
   amount?: number;
@@ -19,6 +21,11 @@ class CSVWriter {
   private csv: string;
 
   // methods
+
+  save(file: string): void {
+    appendFileSync(file, this.csv);
+  }
+
   logCSV(): void {
     console.log("🎇🎇");
     console.log(this.csv);
@@ -27,8 +34,7 @@ class CSVWriter {
 
   addRows(values: IPayment[]): void {
     let rows = values.map((value) => this.formatRow(value));
-    this.csv += rows.join("\n");
-    this.logCSV();
+    this.csv += rows.join("\n") + "\n";
   }
 
   private formatRow(value: IPayment): string {
@@ -42,3 +48,5 @@ writer.addRows([
   { id: 1, amount: 100, to: "Bob", notes: "for fizza" },
   { id: 2, amount: 300, to: "Kii", notes: "party" },
 ]);
+
+writer.save("../payments/test_payment.csv");
